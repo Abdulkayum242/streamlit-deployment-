@@ -5,8 +5,8 @@ from utils import *
 
 @st.cache
 def get_predictions(input_tokens, starts, k = 1.0):
-    n_gram_counts_list = pickle.load(open('C:/Users/vikas bisoi/PycharmProjects/WordPrdictions/en_counts.txt', 'rb'))
-    vocabulary = pickle.load(open('C:/Users/vikas bisoi/PycharmProjects/WordPrdictions/vocab.txt', 'rb'))
+    n_gram_counts_list = pickle.load(open('en_counts.txt', 'rb'))
+    vocabulary = pickle.load(open('vocab.txt', 'rb'))
     suggestion = get_suggestions(input_tokens, n_gram_counts_list, vocabulary, k=k, start_with = starts)
     return suggestion
 
