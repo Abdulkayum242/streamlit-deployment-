@@ -35,6 +35,6 @@ if st.button("Predict"):
 
 
 st.markdown("---")
-st.markdown("This project is developed by Students of Ramniranjan Jhunjhunwala College under guidence of professor Cyrus Lentin Sir.")
+st.markdown("All Rights Reserved.")
 
 
