@@ -31,7 +31,7 @@ tokenized = sentence.split()
 
 if st.button("Predict"):
     suggestion = get_predictions(tokenized, starts, k)
-    st.write(suggestion[0][1][0])
+    st.write(suggestion[0])
         
     
 
