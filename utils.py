@@ -1,3 +1,4 @@
+
 import re
 from nltk.tokenize import word_tokenize
 import random
@@ -61,14 +62,22 @@ np.save('unigram_dict', word_count)
 
 ngram_dict1=defaultdict(lambda: defaultdict(lambda: 0))
 
-with open('uni_dict.json', 'w') as fp:
-    json.dump(ngram_dict1, fp)
+
 
 def gen_uni_keys(cleaned_data):
     
     for i in range(len(cleaned_data) - 1):
         
           yield [ cleaned_data[i], cleaned_data[i + 1] ]
+
+
+uni_pairs=gen_uni_keys(cleaned_data)
+for pair in uni_pairs:
+    ngram_dict1[pair[0]][pair[1]]+=1    
+  
+with open('uni_dict.json', 'w') as fp:
+    json.dump(ngram_dict1, fp)
+
 
 with open('uni_dict.json', 'r') as fp:
     uni_dict=json.loads( fp.read())
@@ -98,4 +107,7 @@ def unipred(word):
         print(preds)
         
      
+
+
+
 
