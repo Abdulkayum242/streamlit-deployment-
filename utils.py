@@ -5,6 +5,7 @@ import random
 import nltk
 from collections import Counter, defaultdict
 import pickle
+import wordcloud
 from wordcloud import WordCloud, STOPWORDS
 import json
 
