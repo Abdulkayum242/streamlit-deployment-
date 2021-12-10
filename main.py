@@ -9,7 +9,7 @@ from nltk.tokenize import word_tokenize
 from utils  import *
 import json
 import streamlit as st
-import wordcloud
+
 
 st.title('word prediction')
 st.balloons()
