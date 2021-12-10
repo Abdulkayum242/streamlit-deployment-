@@ -5,8 +5,7 @@ import random
 import nltk
 from collections import Counter, defaultdict
 import pickle
-import wordcloud
-from wordcloud import WordCloud, STOPWORDS
+
 import json
 
 
@@ -24,11 +23,6 @@ for word in cleaned_data:
 
 
 
-counter={}
-for i in word_count.keys():
-    if i not in list(STOPWORDS):
-        counter[i]=word_count[i]
-print(len(counter.keys()))
 
 
 
@@ -84,18 +78,18 @@ with open('uni_dict.json', 'r') as fp:
     uni_dict=json.loads( fp.read())
 
 
+def prob(word_count):
+    for words in word_count:
+        total_count = float(sum(word_count[words].values()))
+        for nw in word_count[words]:
+            word_count[words][nw] = (word_count[words][nw]+1)/(total_count+vocab)
+    
+
+
 
     
 
-def prob(counter):
-    
-    
-    for words in counter:
-        total_count = float(sum(counter[words].values()))
-        for nw in counter[words]:
-            counter[words][nw] = (counter[words][nw]+1)/(total_count+vocab)
-    
-    
+
 
 def unipred(word):
     
