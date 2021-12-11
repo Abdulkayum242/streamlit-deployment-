@@ -30,8 +30,15 @@ k = st.number_input("Enter smoothing factor k")
 tokenized = sentence.split()
 
 if st.button("Predict"):
-    suggestion = get_predictions(tokenized, starts, k)
-    st.write(suggestion[0])
+        if not sentence:
+            st.warning("Please Enter the sentence first!")
+        
+        else:
+             suggestion = get_predictions(tokenized, starts, k)
+             st.write(suggestion[0])
+       
+    
+    
         
     
 
